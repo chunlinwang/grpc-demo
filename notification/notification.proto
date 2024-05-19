@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option go_package = "github.com/chunlinwang/grpc-demo/notification/notification";
+
+package notification;
+
+service Notification {
+  // UnaryNotify is unary notify.
+  rpc UnaryNotify(NotificationRequest) returns (NotificationResponse) {}
+  // ServerStreamingNotify is server side streaming.
+  rpc ServerStreamingNotify(NotificationRequest) returns (stream NotificationResponse) {}
+  // ClientStreamingNotify is client side streaming.
+  rpc ClientStreamingNotify(stream NotificationRequest) returns (NotificationResponse) {}
+  // BidirectionalStreamingNotify is bidi streaming.
+  rpc BidirectionalStreamingNotify(stream NotificationRequest) returns (stream NotificationResponse) {}
+}
+
+message NotificationRequest{
+  uint64 requestId = 1;
+  string content = 2;
+  bool propagate = 3;
+}
+
+message NotificationResponse {
+  uint64 requestId = 1;
+  string content = 2;
+}
+
+
