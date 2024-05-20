@@ -23,3 +23,12 @@ go run notification_server/main.go
 go run notification_client/main.go
 ```
 
+## Blog
+https://medium.com/@kazami0083/grpc-vs-restful-api-49753545e3cf
+
+## requirement
+- Go > 1.20
+- libprotoc 26.1
+
+## Author
+* [@Chunlin Wang](https://www.linkedin.com/in/chunlin-wang-b606b159/)
